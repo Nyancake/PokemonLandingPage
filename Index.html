@@ -1,16 +1,537 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <title>Website Portfolio</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    $ npm i bs5-lightbox
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Pokemon Landing Page</title>
+
+    <style>
+        /* Carousel styling */
+        
+        #introCarousel,
+        .carousel-inner,
+        .carousel-item,
+        .carousel-item.active {
+            height: 100vh;
+        }
+        
+        .carousel-item:nth-child(1) {
+            background-image: url('Assets/pkmn1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        
+        .carousel-item:nth-child(2) {
+            background-image: url('Assets/pkmn2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        
+        .carousel-item:nth-child(3) {
+            background-image: url('Assets/pkmn5.webp');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        
+        .card-img-top {
+            width: 100%;
+            height: 16vw;
+            object-fit: cover;
+        }
+        /* Height for devices larger than 576px */
+        
+        @media (max-width: 1366px) {
+            #introCarousel {
+                margin-top: -58.59px;
+            }
+            .card-img-top {
+                width: 100%;
+                height: 30vh;
+                object-fit: contain;
+            }
+        }
+        
+        .navbar .nav-link {
+            color: #fff !important;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Navigation Bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 2000;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="Index.html"><strong style="color: white;">Pokemon Landing Page</strong></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sections 
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#Tiers">Tiers</a></li>
+                            <li><a class="dropdown-item" href="#VGC">VGC</a></li>
+                            <li><a class="dropdown-item" href="#Smogon">Smogon</a></li>
+                            <li><a class="dropdown-item" href="#pkmnSV">Pokemon Scarlet and Violet</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <h1>This is me!</h1>
-    <p> Meow Meow Meow</p>
-    <p>Peepers</p>
+    <!--Carousel-->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="d-flex justify-content-center align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.6);">
+                    <div class="text-white text-center">
+                        <h1 class="mb-3 ">Welcome to my Landing Page</h1>
+                        <h5 class="mb-4 ">Don't know Pokemon? I'll Introduce You, Come On!</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.6);">
+                    <div class="text-white text-center">
+                        <h1 class="mb-3 ">By: Joseph Terence C. Natera</h1>
+                        <h5 class="mb-4 ">BSCPE-4C</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.6);">
+                    <div class="text-white text-center">
+                        <h1 class="mb-3 ">Project in Web Engineering</h1>
+                        <h5 class="mb-4 ">Submitted to: Dr. Lech Walesa M. Navarra</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 
+    <!-- History -->
+    <div class="container-md ">
+        <section>
+            <br>
+            <hr class="bg-danger border-2 border-top border-danger">
+            <br>
+            <div class="row ">
+                <div class="col-md-6 gx-5 mb-4 ">
+                    <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5 " data-mdb-ripple-color="light ">
+                        <img src="Assets/logo.jpg " class="img-fluid " />
+                        <a href="#! ">
+                            <div class="mask " style="background-color: rgba(251, 251, 251, 0.15); "></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 gx-5 mb-4 ">
+                    <h1><strong>Short History</strong></h1>
+                    <p style="text-align: justify; ">
+                        <strong>Pokémon</strong> was invented by a Japanese man named Satoshi Tajiri and his friend Ken Sugimori, who is an illustrator. Back in 1982 Satoshi started a gaming magazine together with his friends called Game Freak, but after
+                        a while he decided to start making his own video games, instead of writing about them. In 1989 Satoshi turned Game Freak into a gaming company, and together with his friends they released a few games such as Pulseman, Yoshi and
+                        Mario & Wario, which did pretty well. In the early 1990s, inspired by his childhood exploring forests and finding bugs and tadpoles, Satoshi came up with the idea for Pocket Monsters (or as it's better known Pokémon), and pitched
+                        it to Nintendo.
+                        <br> <br>If you want to have background music while scrolling, Click this song!
+                        <br> Lower the volume before playing.
+                    </p>
+                    <audio controls="controls" src="Assets/Song.mp3" type="audio/mp3" autoplay>
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards -->
+        <section id="Tiers">
+            <br>
+            <hr class="bg-danger border-2 border-top border-danger">
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="Assets/Ubers.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Generation 8 Ubers</h5>
+                            <p class="card-text">Majority of the Legendary and Mythical Pokemon lives here. Come Check it out!</p>
+                            <a href="#Ubers" class="btn btn-primary">Go to Ubers</a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="Assets/Ou.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Gen 8 Overused</h5>
+                            <p class="card-text"> Pokemon with the highest usage in team synergies makes players climb the tier.</p>
+                            <a href="#OU" class="btn btn-primary">Go to OU</a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="Assets/UU.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Gen 8 Underused</h5>
+                            <p class="card-text">Another tier where pokemon coudn't make into Ou but have their niche and synergies.</p>
+                            <a href="#UU" class="btn btn-primary">Go to UU</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- VGC -->
+    <section id="VGC">
+        <div class="container-md">
+            <br>
+            <hr class="bg-danger border-2 border-top border-danger">
+            <br>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light ">
+                        <center>
+                            <img src="Assets/vgc.png" class="img-fluid" />
+                        </center>
+                        <a href="#! ">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15); "></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <br>
+                    <h1><strong> Pokemon Video Game Championship (VGC) </strong></h1>
+                    <p style="text-align: justify;"> The Pokémon Video Game Championships (VGC) lets you battle against Trainers from all over the world and compete for great prizes throughout the year. Some Trainers prefer just to battle at local events from time to time, while others
+                        work toward the ultimate goal: an invitation to the annual Pokémon World Championships. Attending an event in person can be as simple as finding an event near you in our Event Locator, preparing your team, and heading out to compete.
+                        <br> <br> Here's a short video explained by Nekkra.</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <center>
+                            <iframe width="100%" height="600" class="embed-responsive-item" src="Assets/VGC.mp4" allowfullscreen></iframe>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smogon -->
+    <section id="Smogon">
+        <br>
+        <hr class="bg-danger border-2 border-top border-danger">
+        <br>
+        <div class="container-md">
+            <div class="row ">
+                <div class="col-md-3 gx-5 mb-4 ">
+                    <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5 " data-mdb-ripple-color="light ">
+                        <img src="Assets/Smogon.png " class="img-fluid " />
+                        <a href="#!">
+                            <div class="mask " style="background-color: rgba(251, 251, 251, 0.15); "></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-9 gx-5 mb-4 ">
+                    <h1><strong>Smogon University</strong></h1>
+                    <p style="text-align: justify; ">
+                        Smogon University, commonly shortened to Smogon, is a website whose content encompasses competitive Pokémon battling. It offers guides on battling strategies for people of different Pokémon knowledge backgrounds. The website was founded by 'chaos' (one
+                        of the developers of NetBattle) and is a considerably well-known website, visited by competitive Pokémon battling enthusiasts. The Smogon motto is <strong> "Pokémon on the Internet: Let's make it happen" </strong>                        and their mascot is the Pokémon Koffing, the name Smogon itself being the German name for this Pokémon.
+                    </p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <img src="Assets/dex.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Smogon Dex</h5>
+                            <p class="card-text"> Smogon offers a pokedex ordered by viability ranking,competitive movesets and detailed information on how to use certain Pokemons.</p>
+                            <a href="https://www.smogon.com/dex/ss/pokemon/" class="btn btn-primary">Go to Smogon</a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <img src="Assets/showdown.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Pokemon showdown</h5>
+                            <p class="card-text"> Smogon Universities' very own online battling platform for competitive battling. Join now and play!</p>
+                            <a href="https://play.pokemonshowdown.com/" class="btn btn-primary">Go to Showdown</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section id="Ubers">
+        <br>
+        <hr class="bg-danger border-2 border-top border-danger">
+        <br>
+        <div class="container-md">
+            <div class="row ">
+                <center>
+                    <h1> Examples of Uber Tier Pokemon </h1>
+                    <br>
+                </center>
+                <div class="col-md-3">
+                    <div class="card h-100 border-0">
+                        <img src="Assets/calyrex-ice.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <center>
+                                <h5 class="card-title">Calyrex - Ice</h5>
+                                <h6> Type: Psychic / Ice </h6>
+                                <p style="text-align: center;">STATS</p>
+                                <p> HP: 100 Attack: 165 <br> Defense: 150 Sp. Atk: 85 <br> Sp. Def: 130 Speed: 50</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 border-0">
+                        <img src="Assets/calyrex-shadow.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <center>
+                                <h5 class="card-title">Calyrex - Shadow</h5>
+                                <h6> Type: Psychic / Ghost </h6>
+                                <p style="text-align: center;">STATS</p>
+                                <p> HP: 100 Attack: 85 <br> Defense: 80 Sp. Atk: 165 <br> Sp. Def: 100 Speed: 150</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card h-100 border-0">
+                        <img src="Assets/eternatus.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <center>
+                                <h5 class="card-title">Eternatus</h5>
+                                <h6> Type: Poison / Dragon </h6>
+                                <p style="text-align: center;">STATS</p>
+                                <p> HP: 140 Attack: 85 <br> Defense: 95 Sp. Atk: 145 <br> Sp. Def: 95 Speed: 130</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card h-100 border-0">
+                        <img src="Assets/dialga.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <center>
+                                <h5 class="card-title">Dialga</h5>
+                                <h6> Type: Steel / Dragon </h6>
+                                <p style="text-align: center;">STATS</p>
+                                <p> HP: 100 Attack: 120 <br> Defense: 120 Sp. Atk: 150 <br> Sp. Def: 100 Speed: 90</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+    <section id="OU">
+        <br>
+        <hr class="bg-danger border-2 border-top border-danger">
+        <br>
+        <div class="container-md">
+            <div class="row ">
+                <center>
+                    <h1> Examples of OU Tier Pokemon </h1>
+                    <br>
+                </center>
+                <div class="col-md-3">
+                    <div class="card h-100 border-0">
+                        <img src="Assets/pish.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <center>
+                                <h5 class="card-title">Barraskewda</h5>
+                                <h6> Type: Water </h6>
+                                <p style="text-align: center;">STATS</p>
+                                <p> HP: 61 Attack: 123 <br> Defense: 60 Sp. Atk: 60 <br> Sp. Def: 50 Speed: 136</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 border-0">
+                        <img src="Assets/egg.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <center>
+                                <h5 class="card-title">Blissey</h5>
+                                <h6> Type: Normal </h6>
+                                <p style="text-align: center;">STATS</p>
+                                <p> HP: 255 Attack: 10 <br> Defense: 10 Sp. Atk: 75 <br> Sp. Def: 135 Speed: 55</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card h-100 border-0">
+                        <img src="Assets/dragapult.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <center>
+                                <h5 class="card-title">Dragapult</h5>
+                                <h6> Type: Ghost / Dragon </h6>
+                                <p style="text-align: center;">STATS</p>
+                                <p> HP: 88 Attack: 120 <br> Defense: 75 Sp. Atk: 100 <br> Sp. Def: 75 Speed: 142</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card h-100 border-0">
+                        <img src="Assets/dragonite.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <center>
+                                <h5 class="card-title">Dragonite</h5>
+                                <h6> Type: Flying / Dragon </h6>
+                                <p style="text-align: center;">STATS</p>
+                                <p> HP: 91 Attack: 134 <br> Defense: 95 Sp. Atk: 100 <br> Sp. Def: 100 Speed: 80</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+    <section id="UU">
+        <br>
+        <hr class="bg-danger border-2 border-top border-danger">
+        <br>
+        <div class="container-md">
+            <div class="row ">
+                <center>
+                    <h1> Examples of UU Tier Pokemons </h1>
+                    <br>
+                </center>
+                <div class="col-md-3">
+                    <div class="card h-100 border-0">
+                        <img src="Assets/aegislash.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <center>
+                                <h5 class="card-title">Aegislash</h5>
+                                <h6> Type: Steel / Ghost </h6>
+                                <p style="text-align: center;">STATS</p>
+                                <p> HP: 60 Attack: 50 <br> Defense: 140 Sp. Atk: 50 <br> Sp. Def: 140 Speed: 60</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 border-0">
+                        <img src="Assets/amonguss.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <center>
+                                <h5 class="card-title">Amoonguss</h5>
+                                <h6> Type: Grass / Poison </h6>
+                                <p style="text-align: center;">STATS</p>
+                                <p> HP: 114 Attack: 85 <br> Defense: 70 Sp. Atk: 85 <br> Sp. Def: 80 Speed: 30</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card h-100 border-0">
+                        <img src="Assets/chansey.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <center>
+                                <h5 class="card-title">Chansey</h5>
+                                <h6> Type: Normal </h6>
+                                <p style="text-align: center;">STATS</p>
+                                <p> HP: 250 Attack: 5 <br> Defense: 5 Sp. Atk: 35 <br> Sp. Def: 105 Speed: 50</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card h-100 border-0">
+                        <img src="Assets/conkeldurr.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <center>
+                                <h5 class="card-title">Conkeldurr</h5>
+                                <h6> Type: Fighting </h6>
+                                <p style="text-align: center;">STATS</p>
+                                <p> HP: 105 Attack: 140 <br> Defense: 95 Sp. Atk: 55 <br> Sp. Def: 65 Speed: 45</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+    <section id="pkmnSV">
+        <br>
+        <hr class="bg-danger border-2 border-top border-danger">
+        <br>
+        <div class="container-md">
+            <div class="row ">
+                <center>
+                    <h1>
+                        Pokemon Scarlet and Violet
+                    </h1>
+                    <h6> Official Website:
+                        <a href="https://scarletviolet.pokemon.com/en-us/">No Bipedal Sprigatito</a>
+                    </h6>
+                    <center>
+                        <iframe width="100%" height="600" class="embed-responsive-item" src="Assets/pkmnSV.mp4" allowfullscreen></iframe>
+                    </center>
+                </center>
+            </div>
+    </section>
+
+    <footer class="bg-light text-center text-lg-start">
+        <!-- Copyright -->
+        <br>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2022 Copyright:
+            <a class="text-dark" href="https://www.nintendo.com/ph/index.html">Nintendo</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
 </body>
 
 </html>
